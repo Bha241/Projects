@@ -10,7 +10,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: education-analytics
+  IMAGE_NAME: my_case_study8_image
 
 jobs:
 
