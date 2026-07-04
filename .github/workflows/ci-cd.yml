@@ -16,7 +16,7 @@ jobs:
 
   build-test:
     name: Build and Test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
 
