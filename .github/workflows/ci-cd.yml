@@ -36,6 +36,8 @@ jobs:
           fi
 
       - name: Run Unit Tests
+        env:
+        PYTHONPATH: ${{ github.workspace }}
         run: |
           if [ -d tests ]; then
             pytest
