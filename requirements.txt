@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pyspark==3.5.5
+numpy
+pytest
