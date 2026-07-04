@@ -95,7 +95,7 @@ jobs:
           kubectl get nodes
 
       - name: Update deployment.yaml
-        shell: pwsh
+        shell: bash
         run: |
           $image = "${{ secrets.DOCKER_USERNAME }}/my_case_study8_image:${{ github.sha }}"
           (Get-Content deployment.yaml) `
