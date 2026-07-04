@@ -88,11 +88,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-    - name: Verify Kubernetes Cluster
-      shell: powershell
-      run: |
-        kubectl config current-context
-        kubectl get nodes
+      - name: Verify Kubernetes Cluster
+        shell: powershell
+        run: |
+          kubectl config current-context
+          kubectl get nodes
 
       - name: Update Deployment Image
         run: |
