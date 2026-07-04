@@ -1,33 +1,45 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: education-analytics-deployment
   labels:
     app: education-analytics
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: education-analytics
+
   template:
     metadata:
       labels:
         app: education-analytics
+
     spec:
       containers:
-      - name: education-analytics-container
-        image: education-analytics:latest
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8000
-          name: api-port
-        env:
-        - name: PYTHONPATH
-          value: "/app"
-        resources:
-          requests:
-            memory: "512Mi"
-            cpu: "500m"
-          limits:
-            memory: "1Gi"
-            cpu: "1000m"
+        - name: education-analytics-container
+
+          # Replace Bha241 with your Docker Hub username
+          image: Bha241/my_case_study8_image:latest
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 8000
+              name: api-port
+
+          env:
+            - name: PYTHONPATH
+              value: "/app"
+
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
