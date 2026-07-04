@@ -16,7 +16,7 @@ jobs:
 
   build-test:
     name: Build and Test
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
 
@@ -81,7 +81,7 @@ jobs:
   deploy:
     name: Deploy to Kubernetes
     needs: docker-push
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
 
