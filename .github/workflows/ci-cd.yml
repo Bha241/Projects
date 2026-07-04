@@ -94,11 +94,12 @@ jobs:
           kubectl config current-context
           kubectl get nodes
 
-      - name: Update deployment image
+      - name: Update deployment.yaml
         shell: pwsh
         run: |
+          $image = "${{ secrets.DOCKER_USERNAME }}/my_case_study8_image:${{ github.sha }}"
           (Get-Content deployment.yaml) `
-            -replace 'image:.*', 'image: ${{ secrets.DOCKER_USERNAME }}/my_case_study8_image:${{ github.sha }}' |
+            -replace 'image:.*', "image: $image" |
             Set-Content deployment.yaml
 
       - name: Deploy to Kubernetes
